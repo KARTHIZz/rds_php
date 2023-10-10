@@ -1,7 +1,7 @@
 FROM php:7.4-apache
 
 # Set environment variables for RDS connection
-ENV DB_HOST php-app.chcjpppgghru.ap-northeast-1.rds.amazonaws.com
+ENV DB_HOST phpapp.chcjpppgghru.ap-northeast-1.rds.amazonaws.com
 ENV DB_PORT 3306
 ENV DB_USER karthik
 ENV DB_PASS karthik123
