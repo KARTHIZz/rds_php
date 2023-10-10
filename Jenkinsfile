@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
-                git 'https://github.com/orewa-snk01/php_application.git'
+                git 'https://github.com/KARTHIZz/rds_php.git'
             }
         }
         
