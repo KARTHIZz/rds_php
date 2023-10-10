@@ -23,34 +23,21 @@ pipeline {
         stage('docker image') {
             steps {
                 script{
-                    withDockerRegistry(credentialsId: 'docker-1', toolName: 'docker') {
+                     
                         sh "docker build -t php_app ."
-                        sh "docker tag php_app naveenkumar06/php_app"
-                    }
                 }
 
             }
         }
        
-        stage('docker image push') {
-            steps {
-                script{
-                    withDockerRegistry(credentialsId: 'docker-1', toolName: 'docker') {
-                        sh "docker tag php_app naveenkumar06/php_app"
-                        sh "docker push naveenkumar06/php_app"
-                   }
-                }
-               
-               
-            }
-        }
+        
         
         stage('docker deploy') {
             steps {
                 script{
-                    withDockerRegistry(credentialsId: 'docker-1', toolName: 'docker'){
+                    
                         sh "docker run -d -p 8090:80 php_app"
-                    }
+                    
                 }
             }
         }
